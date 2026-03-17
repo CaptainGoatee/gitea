@@ -14,10 +14,11 @@
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  border-radius: 2px;
+  border-radius: var(--border-radius);
   background: repeating-linear-gradient(45deg, #aaa 25%, transparent 25%, transparent 75%, #aaa 75%, #aaa), repeating-linear-gradient(45deg, #aaa 25%, #fff 25%, #fff 75%, #aaa 75%, #aaa);
   background-position: 0 0, 4px 4px;
   background-size: 8px 8px;
+  border: 1px solid var(--color-light-border);
 }
 
 .color-picker-combo .preview-square::after {

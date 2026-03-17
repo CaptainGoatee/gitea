@@ -19,6 +19,7 @@
   color: var(--color-input-text);
   background-color: var(--color-input-background);
   direction: ltr;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .EasyMDEContainer .CodeMirror.cm-s-default {
@@ -216,9 +217,10 @@
   opacity: 1;
 }
 
-/* Focus */
+/* Focus - match input focus ring */
 .EasyMDEContainer .CodeMirror-focused {
   border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-alpha-20);
 }
 
 .EasyMDEContainer .CodeMirror :focus {
@@ -249,12 +251,13 @@
 .EasyMDEContainer .editor-toolbar {
   position: relative;
   user-select: none;
-  padding: 9px 10px;
+  padding: 8px 12px;
   border-top: 1px solid var(--color-input-border);
   border-left: 1px solid var(--color-input-border);
   border-right: 1px solid var(--color-input-border);
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
+  background: var(--color-box-header);
 }
 
 .EasyMDEContainer .editor-toolbar.fullscreen {

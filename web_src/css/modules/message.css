@@ -8,8 +8,9 @@
   position: relative;
   min-height: 1em;
   margin: 1em 0;
-  padding: 1em 1.5em;
-  border-radius: var(--border-radius);
+  padding: 1em 1.25em;
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-sm);
 }
 
 .ui.message:first-child {
@@ -22,7 +23,7 @@
 
 .ui.attached.message {
   margin-bottom: -1px;
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
   margin-left: -1px;
   margin-right: -1px;
 }
@@ -34,7 +35,7 @@
 
 .ui.bottom.attached.message {
   margin-top: -1px;
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
 }
 
 .ui.bottom.attached.message:not(:last-child) {

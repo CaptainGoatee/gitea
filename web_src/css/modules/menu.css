@@ -6,9 +6,10 @@
   font-weight: var(--font-weight-normal);
   background: var(--color-menu);
   border: 1px solid var(--color-secondary);
-  border-radius: 0.28571429rem;
+  border-radius: var(--border-radius);
   min-height: 2.85714286em;
   font-size: 1rem;
+  box-shadow: var(--shadow-sm);
 }
 .ui.menu:first-child {
   margin-top: 0;
@@ -39,9 +40,10 @@
   padding: 0.92857143em 1.14285714em;
   color: var(--color-text);
   font-weight: var(--font-weight-normal);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
 }
 .ui.menu > .item:first-child {
-  border-radius: 0.28571429rem 0 0 0.28571429rem;
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
 }
 
 .ui.menu .item::before {

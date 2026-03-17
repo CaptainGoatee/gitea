@@ -249,6 +249,9 @@ gitea-theme-meta-info {
   --color-danger: var(--color-red);
   --color-transparency-grid-light: #fafafa;
   --color-transparency-grid-dark: #e2e2e2;
+  /* modern shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05), 0 1px 3px -1px rgb(0 0 0 / 0.04);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.06), 0 2px 4px -2px rgb(0 0 0 / 0.04);
   accent-color: var(--color-accent);
   color-scheme: light;
 }

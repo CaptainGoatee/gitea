@@ -5,7 +5,7 @@
   width: 100%;
   margin: 1em 0;
   border: 1px solid var(--color-secondary);
-  border-radius: 0.28571429rem;
+  border-radius: var(--border-radius-medium);
   vertical-align: middle;
   border-collapse: separate;
   border-spacing: 0;
@@ -13,6 +13,8 @@
   background: var(--color-box-body);
   border-color: var(--color-secondary);
   text-align: start;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
 }
 
 .ui.table:first-child {
@@ -41,13 +43,13 @@
   border-left: none;
 }
 .ui.table > thead > tr:first-child > th:first-child {
-  border-radius: 0.28571429rem 0 0;
+  border-radius: var(--border-radius-medium) 0 0 0;
 }
 .ui.table > thead > tr:first-child > th:last-child {
-  border-radius: 0 0.28571429rem 0 0;
+  border-radius: 0 var(--border-radius-medium) 0 0;
 }
 .ui.table > thead > tr:first-child > th:only-child {
-  border-radius: 0.28571429rem 0.28571429rem 0 0;
+  border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
 }
 
 .ui.table > tfoot > tr > th,
@@ -66,15 +68,15 @@
 }
 .ui.table > tfoot > tr:first-child > th:first-child,
 .ui.table > tfoot > tr:first-child > td:first-child {
-  border-radius: 0 0 0 0.28571429rem;
+  border-radius: 0 0 0 var(--border-radius-medium);
 }
 .ui.table > tfoot > tr:first-child > th:last-child,
 .ui.table > tfoot > tr:first-child > td:last-child {
-  border-radius: 0 0 0.28571429rem;
+  border-radius: 0 0 var(--border-radius-medium) 0;
 }
 .ui.table > tfoot > tr:first-child > th:only-child,
 .ui.table > tfoot > tr:first-child > td:only-child {
-  border-radius: 0 0 0.28571429rem 0.28571429rem;
+  border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
 }
 
 .ui.table > tr > td,

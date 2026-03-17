@@ -27,7 +27,8 @@
   min-height: 36px;
   min-width: 36px;
   padding: 3px 13px;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-fast);
 }
 
 #navbar .item.active {

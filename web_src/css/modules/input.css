@@ -13,12 +13,13 @@
   flex: 1 0 auto;
   outline: none;
   font-family: var(--fonts-regular);
-  padding: 0.67857143em 1em;
+  padding: 0.5em 0.875em;
   border: 1px solid var(--color-input-border);
   color: var(--color-input-text);
-  border-radius: 0.28571429rem;
+  border-radius: var(--border-radius);
   line-height: var(--line-height-default);
   text-align: start;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .ui.disabled.input,
@@ -33,6 +34,7 @@
 .ui.input.focus > input,
 .ui.input > input:focus {
   border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-alpha-20);
 }
 
 .ui.input.error > input {

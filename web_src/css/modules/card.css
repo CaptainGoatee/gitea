@@ -19,9 +19,15 @@
   padding: 0;
   background: var(--color-card);
   border: 1px solid var(--color-secondary);
-  box-shadow: none;
+  box-shadow: var(--shadow-sm);
   overflow-wrap: break-word;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-medium);
+  transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.ui.cards > .card:hover,
+.ui.card:hover {
+  box-shadow: var(--shadow-md);
 }
 
 .ui.card {
@@ -66,17 +72,17 @@
 .ui.cards > .card > .content:first-child,
 .ui.card > .content:first-child {
   border-top: none;
-  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
 }
 
 .ui.cards > .card > :last-child,
 .ui.card > :last-child {
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
 }
 
 .ui.cards > .card > :only-child,
 .ui.card > :only-child {
-  border-radius: var(--border-radius) !important;
+  border-radius: var(--border-radius-medium) !important;
 }
 
 .ui.cards > .card > .extra,

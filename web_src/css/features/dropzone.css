@@ -1,10 +1,11 @@
 .ui .field .dropzone {
   border: 2px dashed var(--color-secondary);
-  background: none;
+  background: var(--color-secondary-alpha-10);
   box-shadow: none;
   padding: 0;
   border-radius: var(--border-radius-medium);
   min-height: 0;
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
 }
 
 .ui .field .dropzone .dz-message {
