@@ -1,17 +1,33 @@
 {{template "base/head" .}}
-<div role="main" aria-label="{{.Title}}" class="page-content dashboard feeds">
+<div role="main" aria-label="{{.Title}}" class="page-content dashboard feeds dashboard-layout">
 	{{template "user/dashboard/navbar" .}}
-	<div class="ui container flex-container">
-		<div class="flex-container-main">
-			{{template "base/alert" .}}
-			{{template "user/heatmap" .}}
-			{{if .Page.Paginater.TotalPages}}
-				{{template "user/dashboard/feeds" .}}
-			{{else}}
-				{{template "user/dashboard/guide" .}}
-			{{end}}
+	<header class="dashboard-welcome">
+		<div class="ui container dashboard-welcome-inner">
+			<h1 class="dashboard-welcome-title">{{ctx.Locale.Tr "dashboard"}}</h1>
+			<p class="dashboard-welcome-desc">{{ctx.Locale.Tr "home.feed_of" .ContextUser.DisplayName}}</p>
 		</div>
-		{{template "user/dashboard/repolist" .}}
+	</header>
+	<div class="ui container flex-container dashboard-container">
+		<div class="flex-container-main dashboard-main">
+			{{template "base/alert" .}}
+			{{if .EnableHeatmap}}
+			<section class="dashboard-section" aria-labelledby="dashboard-contributions-heading">
+				<h2 id="dashboard-contributions-heading" class="dashboard-section-title">{{ctx.Locale.Tr "dashboard.contributions"}}</h2>
+				{{template "user/heatmap" .}}
+			</section>
+			{{end}}
+			<section class="dashboard-section dashboard-section-activity" aria-labelledby="dashboard-activity-heading">
+				<h2 id="dashboard-activity-heading" class="dashboard-section-title">{{ctx.Locale.Tr "activities"}}</h2>
+				{{if .Page.Paginater.TotalPages}}
+					{{template "user/dashboard/feeds" .}}
+				{{else}}
+					{{template "user/dashboard/guide" .}}
+				{{end}}
+			</section>
+		</div>
+		<aside class="flex-container-sidebar dashboard-sidebar" aria-label="{{ctx.Locale.Tr "home.my_repos"}}">
+			{{template "user/dashboard/repolist" .}}
+		</aside>
 	</div>
 </div>
 {{template "base/footer" .}}

@@ -1,3 +1,400 @@
+/* Dashboard layout – welcome strip and content grid */
+.dashboard-layout {
+  padding-bottom: var(--page-space-bottom);
+}
+
+.dashboard-welcome {
+  background: var(--color-box-header);
+  border-bottom: 1px solid var(--color-secondary);
+  padding: 1rem 0;
+}
+
+.dashboard-welcome-inner {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-margin-x);
+  padding-right: var(--page-margin-x);
+}
+
+.dashboard-welcome-title {
+  margin: 0 0 0.2rem;
+  font-size: 1.375rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: var(--color-text-dark);
+}
+
+.dashboard-welcome-desc {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--color-text-light-1);
+}
+
+/* Main content container */
+.page-content.dashboard.feeds .dashboard-container.ui.container.flex-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  padding-left: var(--page-margin-x);
+  padding-right: var(--page-margin-x);
+}
+
+.dashboard-main.flex-container-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+/* Section headings – tight to card below */
+.dashboard-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dashboard-section-title {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: var(--color-text);
+}
+
+/* Heatmap block: card with section above */
+.dashboard-section .activity-heatmap-container {
+  margin-top: 0;
+}
+
+/* Heatmap block: card-like container */
+.dashboard .activity-heatmap-container {
+  background: var(--color-card);
+  border-radius: var(--border-radius-large);
+  padding: 1rem;
+  border: 1px solid var(--color-secondary);
+}
+
+.dashboard .activity-heatmap-container + .divider {
+  margin: 0;
+  border-color: var(--color-secondary);
+  opacity: 0.6;
+}
+
+/* Activity feed: clear block with spacing */
+.dashboard #activity-feed {
+  background: var(--color-card);
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--color-secondary);
+  padding: 0;
+  overflow: hidden;
+}
+
+.dashboard #activity-feed .flex-list {
+  padding: 0 1rem 1rem;
+}
+
+.dashboard #activity-feed .flex-list > .flex-item:first-child {
+  padding-top: 1rem;
+}
+
+.dashboard #activity-feed .flex-item {
+  padding: 10px 0;
+  align-items: center;
+}
+
+.dashboard #activity-feed .flex-item .flex-item-main {
+  gap: 0.35em;
+}
+
+.dashboard #activity-feed .flex-list > .flex-item + .flex-item {
+  border-top-color: var(--color-secondary);
+}
+
+/* Activity feed: leading avatar – consistent size and shape */
+.dashboard #activity-feed .flex-item-leading {
+  flex-shrink: 0;
+}
+
+.dashboard #activity-feed .flex-item-leading img.ui.avatar,
+.dashboard #activity-feed .flex-item-leading .ui.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--border-radius-medium);
+}
+
+.dashboard #activity-feed .flex-item .flex-item-trailing {
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.dashboard #activity-feed .flex-item .flex-item-trailing svg {
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-light-2);
+}
+
+.dashboard #activity-feed .flex-item:hover .flex-item-trailing svg {
+  color: var(--color-primary-dark-2);
+}
+
+/* Commit row in activity: pill + message */
+.dashboard #activity-feed .flex-text-block {
+  font-size: 0.8125rem;
+  color: var(--color-text-light-2);
+  gap: 0.5rem;
+  margin-top: 2px;
+}
+
+.dashboard #activity-feed .flex-text-block .ui.sha.label {
+  padding: 2px 6px;
+  border-radius: var(--border-radius);
+  background: var(--color-secondary-alpha-20);
+  border: 1px solid var(--color-secondary);
+  font-size: 0.75rem;
+}
+
+.dashboard #activity-feed .flex-text-block .tw-truncate {
+  min-width: 0;
+}
+
+.dashboard #activity-feed .flex-text-block .ui.avatar {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+/* Right sidebar: single card with clear separation */
+.dashboard .flex-container-sidebar {
+  width: 360px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#dashboard-repo-list {
+  background: var(--color-box-body);
+  border-radius: var(--border-radius-large);
+  border: 1px solid var(--color-secondary);
+  border-left: 2px solid var(--color-primary-alpha-40);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Repository / Organization tabs */
+#dashboard-repo-list > .ui.two.item.menu {
+  border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid var(--color-secondary);
+  background: var(--color-box-header);
+}
+
+#dashboard-repo-list > .ui.two.item.menu .item {
+  padding: 10px 1rem;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-light-2);
+}
+
+#dashboard-repo-list > .ui.two.item.menu .item.active {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  margin-bottom: -1px;
+}
+
+#dashboard-repo-list .dashboard-repos .ui.top.attached.header {
+  border-radius: 0;
+  margin: 0;
+  padding: 12px 1rem;
+  background: var(--color-box-header);
+  border: none;
+  border-bottom: 1px solid var(--color-secondary);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.9375rem;
+}
+
+#dashboard-repo-list .dashboard-repos .ui.top.attached.header a.muted {
+  color: var(--color-text-light-2);
+  padding: 4px;
+  border-radius: var(--border-radius);
+}
+
+#dashboard-repo-list .dashboard-repos .ui.top.attached.header a.muted:hover {
+  color: var(--color-primary);
+  background: var(--color-primary-alpha-10);
+}
+
+#dashboard-repo-list .dashboard-repos .ui.top.attached.header .svg {
+  width: 18px;
+  height: 18px;
+}
+
+#dashboard-repo-list .dashboard-repos .ui.attached.segment {
+  margin: 0;
+  border: none;
+  border-bottom: 1px solid var(--color-secondary);
+  border-radius: 0;
+  padding: 12px 1rem;
+  background: var(--color-box-body);
+}
+
+#dashboard-repo-list .dashboard-repos .ui.attached.table.segment {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background: var(--color-box-body);
+}
+
+#dashboard-repo-list .repos-search .ui.input {
+  border-radius: var(--border-radius);
+}
+
+#dashboard-repo-list .repos-search .ui.input input {
+  border-radius: var(--border-radius);
+  background: var(--color-input-background);
+  border-color: var(--color-secondary);
+  font-size: 0.875rem;
+}
+
+#dashboard-repo-list .repos-search .ui.input .icon {
+  color: var(--color-text-light-2);
+}
+
+#dashboard-repo-list .repos-search .ui.dropdown.icon.button {
+  color: var(--color-text-light-2);
+}
+
+#dashboard-repo-list .repos-search .ui.dropdown.icon.button:hover {
+  color: var(--color-primary);
+}
+
+#dashboard-repo-list .repos-filter.menu {
+  border: none;
+  background: transparent;
+  margin-top: 6px;
+  min-height: 0;
+  gap: 2px;
+}
+
+#dashboard-repo-list .repos-filter .item {
+  padding: 5px 8px;
+  border-radius: var(--border-radius);
+  font-size: 0.8125rem;
+}
+
+#dashboard-repo-list .repos-filter .item.active {
+  background: var(--color-primary-alpha-20);
+  color: var(--color-primary);
+}
+
+#dashboard-repo-list .repo-owner-name-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px 0;
+}
+
+#dashboard-repo-list .repo-owner-name-list li {
+  border-radius: var(--border-radius);
+  margin: 0 0.75rem;
+}
+
+#dashboard-repo-list .repo-owner-name-list li:hover,
+#dashboard-repo-list .repo-owner-name-list li.active {
+  background: var(--color-hover-opaque);
+}
+
+#dashboard-repo-list .repo-list-link {
+  padding: 8px 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  color: var(--color-text);
+  border-radius: var(--border-radius);
+  font-size: 0.875rem;
+}
+
+#dashboard-repo-list .repo-list-link:hover {
+  color: var(--color-primary);
+}
+
+#dashboard-repo-list .repo-list-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-light-2);
+}
+
+#dashboard-repo-list .repo-list-link:hover .repo-list-icon {
+  color: var(--color-primary);
+}
+
+#dashboard-repo-list .repo-owner-name-list .ui.circular.mini.grey.label {
+  font-size: 0.6875rem;
+  padding: 2px 6px;
+  background: var(--color-secondary-alpha-20);
+  color: var(--color-text-light-2);
+}
+
+#dashboard-repo-list .repos-filter .item.active .ui.circular.mini.grey.label {
+  background: var(--color-primary-alpha-30);
+  color: var(--color-primary);
+}
+
+#dashboard-repo-list .empty-repo-or-org {
+  padding: 1.25rem 1rem;
+  text-align: center;
+  color: var(--color-text-light-2);
+  font-size: 0.875rem;
+}
+
+#dashboard-repo-list .empty-repo-or-org .svg {
+  width: 28px;
+  height: 28px;
+  margin: 0 auto 0.5rem;
+  display: block;
+  color: var(--color-text-light-3);
+}
+
+/* Secondary nav (context switcher) */
+.dashboard .secondary-nav {
+  padding: 8px 16px;
+  background: var(--color-secondary-nav-bg);
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.dashboard .secondary-nav .ui.secondary.menu {
+  border: none;
+  background: transparent;
+}
+
+.dashboard .secondary-nav .ui.menu .item {
+  color: var(--color-text);
+}
+
+.dashboard .secondary-nav .ui.menu .item:hover,
+.dashboard .secondary-nav .ui.menu .item.active {
+  color: var(--color-primary);
+}
+
+@media (max-width: 767.98px) {
+  .dashboard .flex-container-sidebar {
+    width: auto;
+  }
+
+  #dashboard-repo-list {
+    border-radius: var(--border-radius-large);
+  }
+}
+
 .dashboard.feeds .context.user.menu,
 .dashboard.issues .context.user.menu {
   z-index: 101;
@@ -52,10 +449,6 @@
 .dashboard .dashboard-repos,
 .dashboard .dashboard-orgs {
   margin: 0 1px; /* Accommodate for Semantic's 1px hacks on .attached elements */
-}
-
-.dashboard .secondary-nav {
-  padding: 1px 12px; /* match .overflow-menu-items in height */
 }
 
 .dashboard .secondary-nav .org-visibility .label {

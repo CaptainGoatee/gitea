@@ -305,6 +305,36 @@ body {
   box-shadow: var(--shadow-md), 0 0 0 1px var(--color-secondary), 0 0 24px var(--color-primary-alpha-20);
 }
 
+/* Dashboard: welcome strip and section titles */
+.dashboard-welcome {
+  background: linear-gradient(180deg, var(--color-box-header) 0%, var(--color-body) 100%);
+  border-bottom-color: var(--color-secondary);
+}
+
+.dashboard-welcome-title {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dashboard-section-title {
+  color: var(--color-primary-dark-1);
+}
+
+/* Dashboard: heatmap and activity feed cards with subtle glow */
+.dashboard .activity-heatmap-container,
+.dashboard #activity-feed,
+#dashboard-repo-list {
+  box-shadow: var(--shadow-sm), 0 0 0 1px var(--color-secondary), 0 0 20px var(--color-primary-alpha-10);
+}
+
+.dashboard .activity-heatmap-container:hover,
+.dashboard #activity-feed:hover,
+#dashboard-repo-list:hover {
+  box-shadow: var(--shadow-md), 0 0 0 1px var(--color-secondary), 0 0 24px var(--color-primary-alpha-15);
+}
+
 /* Cards and segments: subtle accent glow on border */
 .ui.card,
 .ui.segment {
