@@ -1,7 +1,7 @@
 {{template "base/head" .}}
 <div role="main" aria-label="{{if .IsSigned}}{{ctx.Locale.Tr "dashboard"}}{{else}}{{ctx.Locale.Tr "home_title"}}{{end}}" class="page-content home">
 	<section class="home-hero">
-		<img class="home-hero-logo" width="200" height="200" src="{{AssetUrlPrefix}}/img/logo.svg" alt="{{ctx.Locale.Tr "logo"}}">
+		<img class="home-hero-logo" width="200" height="200" src="{{AssetUrlPrefix}}/img/logo.svg?v={{AssetVersion}}" alt="{{ctx.Locale.Tr "logo"}}">
 		<h1 class="home-hero-title tw-text-balance">{{AppName}}</h1>
 		<p class="home-hero-desc tw-text-balance">{{ctx.Locale.Tr "startpage.app_desc"}}</p>
 	</section>

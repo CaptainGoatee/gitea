@@ -20,6 +20,8 @@ import (
 var (
 	// AppVer is the version of the current build of Gitea. It is set in main.go from main.Version.
 	AppVer string
+	// AssetVersionSuffix is set at build time (ldflags) to bust asset caches on dev builds.
+	AssetVersionSuffix string
 	// AppBuiltWith represents a human-readable version go runtime build version and build tags. (See main.go formatBuiltWith().)
 	AppBuiltWith string
 	// AppStartTime store time gitea has started

@@ -318,6 +318,9 @@ func loadServerFrom(rootCfg ConfigProvider) {
 
 	AbsoluteAssetURL = MakeAbsoluteAssetURL(appURL, StaticURLPrefix)
 	AssetVersion = strings.ReplaceAll(AppVer, "+", "~") // make sure the version string is clear (no real escaping is needed)
+	if AssetVersionSuffix != "" {
+		AssetVersion += "-" + AssetVersionSuffix
+	}
 
 	manifestBytes := MakeManifestData(AppName, AppURL, AbsoluteAssetURL)
 	ManifestData = `application/json;base64,` + base64.StdEncoding.EncodeToString(manifestBytes)

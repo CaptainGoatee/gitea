@@ -114,6 +114,10 @@ ifeq ($(VERSION),main)
 endif
 
 LDFLAGS := $(LDFLAGS) -X "main.Version=$(GITEA_VERSION)" -X "main.Tags=$(TAGS)"
+# Cache-bust assets on dev builds so logo/favicon refresh after rebuild
+ifneq ($(findstring +,$(GITEA_VERSION)),)
+LDFLAGS := $(LDFLAGS) -X "code.gitea.io/gitea/modules/setting.AssetVersionSuffix=$(shell date +%s)"
+endif
 
 LINUX_ARCHS ?= linux/amd64,linux/386,linux/arm-5,linux/arm-6,linux/arm64,linux/riscv64
 
@@ -645,7 +649,7 @@ install: $(wildcard *.go)
 build: frontend backend ## build everything
 
 .PHONY: frontend
-frontend: $(WEBPACK_DEST) ## build frontend files
+frontend: generate-images $(WEBPACK_DEST) ## build frontend files
 
 .PHONY: backend
 backend: generate-backend $(EXECUTABLE) ## build backend files
