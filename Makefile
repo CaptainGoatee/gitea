@@ -648,6 +648,10 @@ install: $(wildcard *.go)
 .PHONY: build
 build: frontend backend ## build everything
 
+.PHONY: build-linux
+build-linux: frontend generate-backend ## build Linux amd64 binary (for VPS deployment)
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GO) build $(GOFLAGS) $(EXTRA_GOFLAGS) -tags '$(TAGS)' -ldflags '-s -w $(EXTLDFLAGS) $(LDFLAGS)' -o gitea-linux
+
 .PHONY: frontend
 frontend: generate-images $(WEBPACK_DEST) ## build frontend files
 
